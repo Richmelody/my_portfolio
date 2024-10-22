@@ -1,0 +1,120 @@
+/* General styles for the Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  z-index: 1000;
+  background-color: #333; /* Ensures visibility */
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* Links for desktop view */
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin-right: 20px; /* Right align */
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: yellow;
+  border-bottom: 2px solid yellow;
+}
+
+/* Hamburger Menu (initially hidden on desktop) */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.hamburger.open .bar:nth-child(1) {
+  transform: translateY(10px) rotate(45deg); /* Top bar rotates and moves */
+}
+
+.hamburger.open .bar:nth-child(2) {
+  opacity: 0; /* Middle bar disappears */
+}
+
+.hamburger.open .bar:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg); /* Bottom bar rotates and moves */
+}
+
+/* Mobile menu styles (hidden by default) */
+.nav-links-mobile {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 200px;
+  list-style: none;
+  padding: 10px;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.9);
+  opacity: 0; /* Start hidden */
+  transform: translateY(-10px); /* Start slightly above */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.nav-links-mobile li {
+  margin-bottom: 20px;
+}
+
+.nav-links-mobile li a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.nav-links-mobile li a:hover {
+  color: yellow;
+  border-bottom: 2px solid yellow;
+}
+
+/* Media Query for Mobile View */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex; /* Show hamburger menu in mobile view */
+  }
+
+  .nav-links {
+    display: none; /* Hide desktop links in mobile view */
+  }
+
+  .nav-links-mobile {
+    display: flex; /* Show mobile links when hamburger is clicked */
+  }
+
+  .nav-links-mobile.open {
+    display: flex; /* Show mobile links */
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Move to original position */
+  }
+}

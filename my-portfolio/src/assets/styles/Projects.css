@@ -1,0 +1,30 @@
+/* src/assets/styles/Projects.css */
+.projects {
+    padding: 2rem;
+  }
+  
+  .projects h2 {
+    font-size: 1.8rem;
+    color: #333;
+  }
+  
+  .projects ul {
+    list-style: none;
+  }
+  
+  .projects li {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  @media (max-width: 768px) {
+    .projects h2 {
+      font-size: 1.5rem;
+    }
+  
+    .projects li {
+      font-size: 1rem;
+    }
+  }
+  
